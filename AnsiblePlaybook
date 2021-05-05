@@ -1,0 +1,22 @@
+---
+-
+    become: true
+    become_user: root
+    hosts: slave
+    tasks:
+     -
+      apt: "name=docker.io state=present"
+      name: "Install Docker"
+     -
+      name: "start docker servcies"
+      service: "name=docker state=started"
+     -
+      git: "repo=https://github.com/vickymartin1993/eduproject.git dest=/home/ubuntu/ansibledocker"
+      name: "get the file from github"
+     -
+      command: "mkdir=/home/ubuntu/ansibledocker"
+      command: "chdir=/home/ubuntu/ansibledocker docker build -t myimage:ansidocker ."
+      name: "build the docker file"
+     -
+      command: "docker run -itd -P myimage:ansidocker"
+      name: "run the docker images"
