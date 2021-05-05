@@ -1,2 +1,2 @@
-# eduproject
-Edureka Project
+# devops-webapp
+Certification Project for Edureka DevOps
