@@ -28,9 +28,6 @@
                 <configuration>
                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-                <properties>
-                  <failOnMissingWebXml>false</failOnMissingWebXml>   
-                </properties>
             </plugin>
                   
             <plugin>
